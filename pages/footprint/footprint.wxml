@@ -1,0 +1,17 @@
+<!--pages/footprint/footprint.wxml-->
+<view class="l-container">
+  <view class="l-item" wx:for="{{footlist}}" wx:for-item="footlist">
+    <view class="l-time">{{footlist.time}}</view>
+    <view class="l-matter" wx:for="{{footlist.list}}" bindtap="gogoods" data-id="{{item.goods_id}}">
+      <view class="left">
+        <image src="{{item.images}}"></image>
+      </view>
+      <view class="right">
+        <view class="title">{{item.goods_name}}</view>
+        <view class="price">￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{!footlist}}" class="nodata">您还没有浏览没有足迹~</view>
+</view>
+

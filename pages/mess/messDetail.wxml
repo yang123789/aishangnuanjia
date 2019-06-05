@@ -1,0 +1,21 @@
+<!--pages/mess/messDetail.wxml-->
+<import src="../../res/wxParse/wxParse.wxml"></import>
+<view class="container">
+
+
+  <!-- S 标题 -->
+  <view class="title">
+    <view class="h1">{{ archivesInfo.data.title }}</view>
+    <view class="date">{{ archivesInfo.data.createtime}}</view>
+  </view>
+  <!-- E 标题 -->
+
+  <!-- S 正文 -->
+  <view class="content">
+      <view class="goods-cont-li">
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+     </view>
+  </view>
+  <!-- E 正文 -->
+
+</view>

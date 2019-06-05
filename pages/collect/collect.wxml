@@ -1,0 +1,15 @@
+<!--pages/collect/collect.wxml-->
+<view class="l-container">
+  <view class="l-item" wx:for="{{footprint}}" >
+    <view class="l-matter" data-id="{{item.goods_id}}" bindtap="gogoods">
+      <view class="left">
+        <image src="{{item.images}}"></image>
+      </view>
+      <view class="right">
+        <view class="title">{{item.goods_name}}</view>
+        <view class="price">￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+    <view wx:if="{{!footprint}}" class="nodata">您还没有收藏商品~</view>
+</view>

@@ -1,0 +1,38 @@
+<!--pages/footprint/footprint.wxml-->
+<view class="l-container">
+  <view class="l-item" wx:for="{{footlist}}" wx:for-item="footlist" wx:if="{{footlist}}">
+    <view class="l-time">
+      <image src="/res/imgs/dp.png"></image>
+      <text>{{footlist.name}}</text>
+    </view>
+    <view class="l-matter" wx:for="{{footlist.list}}">
+      <view class="del" data-id="{{item.id}}" bindtap="del">
+        <image src="/res/imgs/del.png"></image>
+      </view>
+      <view class="left"  bindtap="gogoods" data-id="{{item.goods_id}}">
+        <image src="{{item.images}}"></image>
+      </view>
+      <view class="right"  >
+        <view class="title" bindtap="gogoods" data-id="{{item.goods_id}}">{{item.goods_name}}</view>
+        <view class="price">￥{{item.price}}</view>
+        <view class="num">
+          <view data-id="{{item.id}}" bindtap="minus">-</view>
+          <input type="text" value="{{item.goods_num}}"/>
+          <view data-id="{{item.id}}" bindtap="plus">+</view>
+        </view>
+      </view>
+    
+    </view>  
+    <view class="sub-btn">
+   
+      <button id="{{footlist.id}}"  bindtap="settlement" >结算</button>
+    </view>
+  </view>
+  <view wx:if="{{footlist==''}}" class="liteshop-notcont" style="margin-top:130px;">
+    <view class="img">
+      <image mode="aspectFit" src="../../res/imgs/no-data.png"></image>
+    </view>
+    <text class="cont">购物车空空如也</text>
+  </view>
+</view>
+

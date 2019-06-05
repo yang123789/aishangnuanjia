@@ -1,0 +1,136 @@
+<!-- 顶部通知栏目
+<block wx:if="{{wxapp.Indexotice}}">
+  <van-notice-bar
+    mode="closeable" color="{{wxapp.TopTextColor}}" custom-class="van-nbar-c" background="{{wxapp.BackgroundColor}}"
+    text="{{wxapp.Indexotice}}"/>
+</block> -->
+<!--定位-->
+<view class="location">
+  <image src="/res/imgs/dw.png" class="dw"></image>
+  <block>
+  <picker bindchange="yzvalue" value="{{yzarray[pindex].name}}" range="{{yzarray}}" range-key="{{'name'}}" class="dwpicker">
+    <view class="picker">
+     {{yzarray[pindex].name}}
+    </view>
+  </picker>
+    <!-- <text wx:if="{{pos.name}}" class="postext">{{pos.name}}</text>
+    <text wx:else class="postext">林校路</text> -->
+  </block>
+  <image class="xia" src="/res/imgs/xia.png"></image>
+</view>
+<!--定位-->
+<!--搜索-->
+<van-search
+  value="{{ re_value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:change="onSearchchange"
+  bind:search="onSearch" >
+ 
+</van-search>
+
+<!-- banner轮播 -->
+<view class="diy-banner" >
+  <swiper autoplay="{{autoplay}}" class="banner-box swiper-box dot-round" duration="{{duration}}" circular="{{true}}" indicator-dots="{{indicatorDots}}" interval="{{interval}}" indicator-color="rgba(241,241,241,0.5)" indicator-active-color="#fff" >
+  <navigator hover-class="none" wx:for-item="banner" url="../news/index?id={{banner.id}}" wx:for="{{banner}}" wx:key="this">
+      <swiper-item item-id="{{index}}">
+        <image class="slide-image" mode="aspectFill" src="{{banner.image}}" data-id="{{index}}"></image>
+      </swiper-item>
+    </navigator>
+  </swiper>
+</view>
+
+
+<!-- 商品分类 -->
+<view class="s-list" >
+  <view class="s-item" wx:for="{{category}}" wx:key='{{item.goods_id}}' bindtap="goclassify" data-id="{{index}}">
+    <image mode="aspectFill" src="{{item.image}}" />
+    <view>{{item.name}}</view>
+  </view>
+</view>
+
+<!-- 商品分类 -->
+
+<!--资讯-->
+<view class='view_notice_contain'>
+  <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="5000">
+    <block wx:for="{{noticeList}}" >
+      <swiper-item bindtap="goMdetail" data-id="{{item.id}}">
+        <image src="{{item.image}}" class="img" mode="aspectFill"/>
+        <view class="swiper_item" >{{item.title}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <navigator class="all_notice" hover-class="none" url="/pages/mess/mess">
+    <text>资讯</text>
+    <image src="/res/imgs/go.png" />
+  </navigator>
+</view>
+
+<!-- 最新上架 -->
+<view class='complist'>
+  <view class="til_conview">
+    <van-row class='in-title'>
+      
+      <van-col><text class="til_con"> 热门推荐 </text></van-col>
+    </van-row>
+    
+  </view>
+  <!-- 最新上架列表 S -->
+     <view class="index_sale tj">
+      <scroll-view scroll-x="true">
+        <navigator hover-class="none" style="display: inline-block;" url="../goods/index?goods_id={{item.goods_id}}" wx:for="{{newlist}}" wx:key="this">
+          <view class="page-column">
+            <view class="sale_img">
+              <image mode="aspectFill" src="{{item.ImageFrist}}"></image>
+            </view>
+            <view class="content onelist-hidden">
+              <text>{{item.goods_name}}</text>
+            </view>
+            <text class="price">￥{{item.spec[0].goods_price}}</text>
+            <view wx:if="{{item.type=='1'}}" class="f-tag">到店服务</view>
+            <view wx:else  class="f-tag">上门服务</view>
+          </view>
+        </navigator>
+      </scroll-view>
+    </view>
+  <!-- 最新上架列表 E -->
+</view>
+
+
+<!-- 随机推荐 -->
+<view class='complist'>
+  <view class="til_conview">
+    <van-row class='in-title'>
+
+      <van-col><text class="til_con"> 精选商品 </text></van-col>
+    </van-row>
+    
+  </view>
+  <!-- 随机推荐列表 S -->
+     <view class="index_sale sj">
+      <view class="free-WaterfallFlow">
+        <block>
+          <view class="flex-wrap" wx:for="{{randomlist}}" wx:key='{{item.goods_id}}' wx:for-index="idx">
+            <navigator hover-class="none" url="../goods/index?goods_id={{item.goods_id}}">
+              <view class="page-column">
+                <view>
+                  <image mode="widthFix" src="{{item.ImageFrist}}"></image>
+                </view>
+                <view class="content_raddom">
+                  <text>{{item.goods_name}}</text>
+                </view>
+                <text class="price">￥{{item.spec[0].goods_price}}</text>
+                <view wx:if="{{item.type=='1'}}" class="f-tag">到店服务</view>
+                <view wx:else  class="f-tag">上门服务</view>
+              </view>
+            </navigator>
+          </view>
+        </block>
+       
+      </view>
+      
+    </view>
+  <!-- 随机推荐列表 E 
+  <include src="../foot_right.wxml"/>-->
+</view>

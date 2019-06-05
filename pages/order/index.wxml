@@ -1,0 +1,65 @@
+<view class="o-container">
+<!--订单导航-->
+  <view class="a-list">
+    <view class="a-item {{active==0?'a-active':''}}" bindtap="onChange" data-index="0">
+      <text>全部订单</text>
+    </view>
+    <view class="a-item {{active==1?'a-active':''}}" bindtap="onChange" data-index="1">
+      <text>待支付</text>
+    </view>
+    <view class="a-item {{active==2?'a-active':''}}" bindtap="onChange" data-index="2">
+      <text>进行中</text>
+    </view>
+    <view class="a-item {{active==3?'a-active':''}}" bindtap="onChange" data-index="3">
+      <text>已完成</text>
+    </view>
+  </view>
+  <!--订单列表-->
+  <view class="order-list">
+
+     <!--订单-->
+    <view class="order-item order-nm" wx:for="{{OrderList}}" wx:for-item="orderitem" wx:if="{{orderitem.showactive==active||active==0}}">
+      <view class="o-matter">
+        <view class="adress">
+          <image src="/res/imgs/dp.png"></image>
+          <text>{{orderitem.station_name}}</text>
+        </view>
+        <view class="order-detail" wx:for="{{orderitem.goods}}" data-id="{{orderitem.id}}"  bindtap="bt_url">
+          <view class="od-left">
+            <image src="{{item.images}}"></image>
+          </view>
+          <view class="od-right">
+            <view class="title">{{item.goods_name}}</view>
+            <view class="time">下单时间:{{orderitem.creattime_text}}</view>
+            <view class="count">数量：x{{item.total_num}}</view>
+            <view class="num">订单编号:{{orderitem.order_no}}</view>
+            <view class="o-type">
+              <text wx:if="{{item.type==2}}">上门服务</text>
+              <text wx:else>到店服务</text>
+            </view>
+            <view class="price">￥{{item.total_price}}</view>
+          </view>
+        </view>
+        <!--按钮-->
+        <view class="btn-list" >
+          <view class="btn-item" wx:if="{{orderitem.showactive==1}}"><button class="qx-sbn" bindtap="orderoff" data-ordersn="{{orderitem.order_no}}">取消订单</button><button class="s-btn" data-id="{{orderitem.id}}"   bindtap="bt_url">去支付</button></view>
+          <view class="btn-item" wx:elif="{{orderitem.showactive==2}}">
+          <block wx:for="{{orderitem.goods}}">
+            <button wx:if="{{item.type==1}}"  class="s-btn" data-id="{{orderitem.id}}"   bindtap="bt_url">查看二维码</button>
+            <button wx:if="{{item.type==2}}"  class="s-btn" bindtap="confirmbtn" data-ordersn="{{orderitem.order_no}}">确认收货</button>
+          </block>
+          </view>
+          <view class="btn-item" wx:else><button class="s-btn">已完成</button></view>
+        </view>
+        <!--按钮-->
+      </view>
+    </view>
+    <!--订单-->
+  </view>
+  <view wx:if="{{isNoData}}" class="liteshop-notcont" style="margin-top:130px;">
+    <view class="img">
+      <image mode="aspectFit" src="../../res/imgs/no-data.png"></image>
+    </view>
+    <text class="cont">订单空空如也</text>
+</view>
+</view>

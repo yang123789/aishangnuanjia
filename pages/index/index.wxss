@@ -1,0 +1,164 @@
+/* banner轮播 */
+.location{padding:20rpx;}
+.dw{width:36rpx;height:44rpx;display: inline-block;vertical-align: middle;margin-right:20rpx;}
+.dwpicker{display: inline-block;vertical-align: middle;font-size:36rpx;}
+.van-search{position: absolute;z-index:99999;width:100%}
+.postext{display: inline-block;font-size:40rpx;color: #242424;vertical-align: middle;}
+.xia{width:26rpx;height:15rpx;display: inline-block;vertical-align: middle;margin-left:4rpx;}
+.slide-image {
+  background: #fff;
+}
+.diy-banner {
+  position: relative;
+  background-color:white;
+}
+/* banner组件按钮 */
+.swiper-box .wx-swiper-dot {
+  height: 20rpx;
+  width: 20rpx;
+}
+.swiper-box {
+  width: 750rpx;
+  
+  position: relative;
+}
+.swiper-box image {
+  width: 100%;
+  height: 100%;
+}
+.van-nbar-c{
+  background-color: #FF6B29!important;
+}
+
+.complist{
+  background-color: white;
+  margin-top:28rpx;
+}
+.til_conview {
+  width:100%;
+  border-bottom:1px solid #eee;
+}
+
+.in-title{
+  font-size:1em;
+  color:#383838;
+  padding:30rpx 0rpx 30rpx 0;
+  display:block;
+}
+.til_con {
+  font-weight:bold;
+  font-size:1.1em;
+  margin-left:0.68em;
+}
+.van-icon-new{
+  display: block!important;
+}
+
+.index_sale {
+  padding:22rpx;
+}
+.index_sale .nav_img, .index-list .nav_img {
+  padding: 30rpx 0 0 0;
+  width: 100%;
+  height: 30rpx;
+}
+.index_sale scroll-view {
+  width: 100%;
+  white-space: nowrap;
+}
+.index_sale .sale_img {
+  border: 1rpx solid #f2f2f2;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 240rpx;
+  height: 240rpx;
+}
+.index_sale .sale_img image {
+  width: 100%;
+  height: 100%;
+}
+.index_sale .price {
+  margin-top: 10rpx;
+  display: block;
+  color:#FF6B29 !important;
+  text-align:left;
+  font-size:28rpx;
+}
+.tj .page-column {
+  padding: 0 22rpx 11rpx 0rpx;
+}
+.index_sale .content {
+  width: 100%;
+  overflow:hidden;
+}
+.index_sale .content text {
+  font-size: 26rpx;
+  margin: 5rpx 10rpx;
+  width: 100%;
+   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+
+/* 瀑布流 */
+.free-WaterfallFlow{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.free-WaterfallFlow:after{
+  content:"";
+  clear:both;
+}
+.free-WaterfallFlow .flex-wrap{
+  
+  width:342rpx;
+  box-shadow: 0 0px 30rpx #eee;
+  text-align: center;
+  
+  margin-bottom:30rpx;
+}
+.flex-wrap image{
+  width:100%;
+  margin:0 auto;
+  margin-bottom: 20rpx;
+  height:342rpx!important;
+}
+.index_sale .content_raddom {
+  overflow:hidden;
+  font-size: 24rpx;
+  color:#333333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  padding-left:20rpx;
+  padding-right:20rpx;
+}
+.sj .price{
+   padding-left:14rpx;
+  padding-right:14rpx;
+  margin-bottom: 20rpx;
+}
+
+.s-list{padding:22rpx 0rpx 0rpx 0rpx;overflow:hidden;background: white;border-radius:20rpx 20rpx 0rpx 0rpx;margin-top:28rpx;position:relative;z-index:999;margin-top:-10rpx;}
+.s-list .s-item{width:25%;float: left;text-align: center;margin-bottom: 22rpx;}
+.s-list .s-item image{width:82rpx;height:82rpx;margin:0 auto;display: block;margin-bottom: 14rpx;}
+.s-list .s-item view{font-size:30rpx;color: #8E8E8E;}
+.view_notice_contain {display: flex;flex-direction: row;justify-content: center;align-items: center;height: 120rpx;background: white;font-size: 26rpx;margin-top:28rpx;position: relative;}
+.image_notice {margin-left: 5rpx;}
+.view_notice_contain .swiper_container {height: 120rpx;padding-left:30rpx;padding-right:30rpx;width:100%;padding-top:25rpx;}
+.view_notice_contain .swiper_item {font-size: 26rpx;color: #666;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;letter-spacing: 2px;}
+.view_notice_contain .img{width:152rpx;height:98rpx;display: inline-block;vertical-align: middle;}
+.view_notice_contain .swiper_item{width:400rpx;display: inline-block;vertical-align: middle;margin-left:20rpx;}
+.all_notice{position: absolute;right:30rpx;top:40rpx;}
+.all_notice image{width:20rpx;height:35rpx;display: inline-block;vertical-align: middle;}
+.all_notice text{display: inline-block;vertical-align: middle;margin-right:14rpx;color: #666;}
+.f-tag{position: absolute;bottom: 0;right:14rpx;font-size: 18rpx;color: #FF6B29;border:1rpx solid #FF6B29;padding:4rpx 10rpx;}
+.sj .page-column{position: relative;}
+.tj .page-column{position: relative;width:240rpx;}
+.tj .f-tag{right:22rpx;bottom:11rpx;}
+.van-cell{background-color:rgba(241,241,241,0.8)!important;border-radius:50rpx;
+}

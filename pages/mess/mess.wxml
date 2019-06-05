@@ -1,0 +1,16 @@
+<!--pages/mess/mess.wxml-->
+<view class="zixun">
+  <view class="z-item" wx:for="{{list}}" bindtap="godetail" data-id="{{item.id}}">
+    <view class="left">
+      <view class="title">{{item.title}}</view>
+      <view class="bottom">
+        <text class="z-tag"><text>新闻</text></text>
+        <text class="z-name"><text>爱尚暖家</text></text>
+        <text class="z-time"><text>{{item.createtime}}</text></text>
+      </view>
+    </view>
+    <view class="right">
+      <image src="{{item.image}}" mode="aspectFill"></image>
+    </view>
+  </view>
+</view>

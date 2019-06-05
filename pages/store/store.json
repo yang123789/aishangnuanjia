@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "店铺",
+  "usingComponents":{
+    "van-tabbar": "/res/vant/tabbar/index",
+    "van-tabbar-item": "/res/vant/tabbar-item/index",
+    "van-card": "/res/vant/card/index"
+  }
+}

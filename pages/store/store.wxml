@@ -1,0 +1,61 @@
+<view class="shop-name">
+  <image src="{{shop.image}}"></image>
+  <text>{{shop.name}}</text>
+</view>
+<view>
+  <image style="width:100%;height:300rpx;"  src="http://test.erp.aishangnuanjia.com/1.png"></image>
+</view>
+<van-tabbar active="{{ active }}" fixed="{{false}}" bind:change="onChange">
+  <van-tabbar-item >综合</van-tabbar-item>
+  <van-tabbar-item   >销量</van-tabbar-item>
+  <van-tabbar-item  >价格</van-tabbar-item>
+</van-tabbar>
+
+<scroll-view wx:if="{{moment.length>0}}" bindscrolltolower="bindgetdata" scroll-y="true" style="height: {{scrollHeight}}px; width: 100%;" >
+ <!-- 随机推荐列表 S -->
+     <view class="index_sale sj">
+      <view class="free-WaterfallFlow">
+        <block>
+          <view class="flex-wrap" wx:for="{{moment}}" wx:for-item="item" wx:for-index="idx" wx:key="ccit">
+            <navigator hover-class="none" url="../goods/index?goods_id={{item.goods_id}}">
+              <view class="page-column">
+                <view>
+                  <image mode="widthFix" src="{{item.images}}"></image>
+                </view>
+                <view class="content_raddom">
+                  <text>{{item.goods_name}}</text>
+                </view>
+                <text class="price">￥{{item.price}}</text>
+                <view wx:if="{{item.type=='1'}}" class="f-tag">到店服务</view>
+                <view wx:else  class="f-tag">上门服务</view>
+              </view>
+            </navigator>
+          </view>
+        </block>
+       
+      </view>
+      
+    </view>
+  <!-- 随机推荐列表 E -->
+  <!-- <navigator class="card-root-c" wx:for="{{list}}" wx:for-item="item" wx:for-index="idx" wx:key="ccit" url="../goods/index?goods_id={{item.id}}">
+    <van-card custom-class="van-card-root-c" 
+      price="¥{{item.goods_min_price}}"
+     
+      currency=""
+      title="{{item.goods_name}}"
+      centered="{{true}}"
+      lazy-load="{{true}}"
+      title-class="card-t-c"
+      price-class="card-p-c"
+      origin-price-class="card-op-c"
+      thumb="{{item.image}}" />
+  </navigator> -->
+  <view hidden="{{!no_more}}" class="no-more">没有更多商品了</view>
+</scroll-view>
+
+<view wx:if="{{moment.length<1}}" class="liteshop-notcont" style="margin-top:130px;">
+    <view class="img">
+      <image mode="aspectFit" src="../../res/imgs/no-data.png"></image>
+    </view>
+    <text class="cont">没有相关商品</text>
+  </view>

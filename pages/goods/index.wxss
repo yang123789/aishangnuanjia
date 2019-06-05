@@ -1,0 +1,150 @@
+/* banner轮播 */
+.slide-image {
+  background: #fff;
+}
+.diy-banner {
+  position: relative;
+}
+/* banner组件按钮 */
+.swiper-box .wx-swiper-dot {
+  height: 20rpx;
+  width: 20rpx;
+}
+.swiper-box {
+  width: 750rpx;
+  height: 720rpx;
+  position: relative;
+}
+.swiper-box image {
+  width: 100%;
+  height: 100%;
+}
+.van-nbar-c{
+  background-color: #FF6B29!important;
+}
+.titlec{
+  font-size: 1.2em;
+  color:#FF6B29;
+  font-weight: bold;
+}
+.yuanjia {
+  font-size:0.8em;
+  color:#666;
+  text-decoration:line-through;
+  margin-left:1em;
+}
+
+.modal_cont_box {
+  padding:20rpx 12px;
+  /*border-top:1rpx solid #eee;*/
+  background-color:white;
+  margin-top:1em;
+}
+.tipstxt {
+  font-size: 30rpx;
+  color: rgb(88, 88, 88);
+  margin-bottom: 10rpx;
+}
+.radio_c{
+  margin-left:-1em;
+  padding-top:0.3em; 
+}
+.radio_cc{
+  display:inline;
+  margin-left:1em;
+}
+.radio_i{
+  color: #FF6B29;
+}
+.radio_l{
+  color: rgb(88, 88, 88);
+  font-size: 30rpx;
+}
+
+.tmall-types{
+  margin-top:24rpx;
+}
+
+.in-title{
+  font-size:1em;
+  
+  width:10em;
+  display:block;
+  margin:0 auto;
+  line-height:2em;
+  padding:0em 0 0em 3em;
+}
+.til_con {
+  font-weight:bold;
+  font-size:1.1em;
+  margin-left:0.68em;
+}
+
+.goods-cont-li .wxParse-inline {
+  font-size: 30rpx;
+  padding: 20rpx 10rpx;
+}
+.goods-cont-li image {
+  width: 100%!important;
+  display: block;
+  margin: 0 auto;
+  margin-left: 0rpx;
+}
+.goods-cont-li .wxParse-inline {
+  font-size: 30rpx;
+}
+.order{
+  min-height:150px;
+  margin-top:1em;
+  padding-bottom: 60px;
+}
+.title-footer{
+  margin-bottom: 98rpx;
+}
+
+.van-stepper__input--disabled {
+  color:white!important;
+  background-color:#FF6B29!important;
+  z-index:-9!important;
+}
+
+.hidden-cl{
+  color: white!important;
+}
+.buynum .van-stepper{
+  position: static!important;
+  display: block;
+  margin-left:40rpx;
+  margin-top:30rpx;
+  margin-bottom:30rpx;
+}
+.zd-matter{
+  background:white;
+  padding:0px 0px 0px 15px;
+  
+}
+.zd-matter .zd-border{
+  border-bottom:1px solid #eee;
+  padding-right:15px;
+  padding-bottom: 10px;
+}
+.zd-matter .zd{font-size:30rpx;margin-bottom: 30rpx;}
+.zd-matter  .zd_bt{width: 100%;display: flex;}
+.zd-matter  .zd_bt>view{flex:1;}
+.zd-matter  .zd_bt .s-tag text{
+font-size:22rpx;
+color:#FF6B29;
+border:1rpx solid #FF6B29;
+padding:4rpx 10rpx;
+display: inline-block;
+}
+.zd-matter  .zd_bt .s-yf{
+  font-size: 28rpx;
+  color: #999999;
+  text-align: center;
+  padding:4rpx 10rpx;
+}
+.s-coll {text-align: right;}
+.s-coll text{display: inline-block;background: #FF6B29;color: white;padding:4rpx 16rpx; font-size: 28rpx;border-radius:6rpx;}
+.van-cell::after{border:0!important;}
+.van-cell{padding:10px 15px!important;}

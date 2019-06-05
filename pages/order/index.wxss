@@ -1,0 +1,74 @@
+/* .tile_sp{
+  line-height: 1em;
+  color:#999;
+}
+.right-padding{
+  margin-right: 0.6em;
+}
+.oneorder{
+  margin-top:0.3em;
+  box-shadow: 0 1px 2px #dfb3f8;
+}
+.liteshop-notcont {
+  margin:130rpx 100rpx;
+}
+.liteshop-notcont .img {
+  width:200px;
+  height:120px;
+  margin:0 auto;
+}
+.liteshop-notcont .img image {
+  width: 100%;
+  height: 100%;
+}
+.liteshop-notcont .cont {
+  display: block;
+  text-align: center;
+  font-size: 30rpx;
+  color: #FF6B29;
+  margin-top: 10rpx;
+}
+
+.tab-margin{
+  margin-bottom: 6px;
+}
+
+.bt-zs{
+   background-color: #FF6B29!important;
+   color: white!important;
+} */
+
+.o-container .a-list{
+  width:100%;
+  background:white;
+  height:80rpx;
+  display: flex;
+  line-height: 80rpx;
+}
+.o-container .a-list .a-item{
+  flex:1;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333333;
+}
+.o-container .a-list .a-active{color: #FF6B29;}
+.order-item{background:white;padding:22rpx;margin-top:20rpx;}
+.order-item .adress image{width:29rpx;height:27rpx;display: inline-block;vertical-align: middle;margin-right:14rpx;}
+.order-item .adress  text{font-size: 30rpx;color: #333333;display: inline-block;vertical-align: middle;}
+.order-item .adress{border-bottom: 1rpx solid #eee;padding-bottom: 22rpx;}
+.order-item .order-detail{position: relative;padding:20rpx 0rpx 20rpx 290rpx;}
+.order-item .order-detail .od-left{width:240rpx;height:240rpx;position: absolute;left:0;top:20rpx;}
+.order-item .order-detail .od-left image{width:100%;height:100%;}
+.order-item .order-detail .od-right .title{font-size: 28rpx;color:#333333;margin-bottom: 12rpx;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;}
+.order-item .order-detail .od-right .time,.order-item .order-detail .od-right .count,.order-item .order-detail .od-right .num{font-size: 26rpx;color:#999999;margin-bottom: 8rpx;}
+.order-item .order-detail .od-right .price{font-size:26rpx;color: #FF6B29;}
+.order-item .order-detail .od-right .o-type text{border:1px solid #FF6B29;color:#FF6B29;padding:4rpx 10rpx;font-size: 18rpx;display: inline-block;vertical-align: text-top;}
+.btn-item{border-top:1px solid #eee;padding-top:22rpx;}
+.btn-item {text-align: right;}
+.btn-item button{width:164rpx;height:58rpx;line-height:58rpx;border-radius:6rpx;font-size:30rpx;padding:0;display: inline-block;}
+.s-btn{background: -webkit-linear-gradient(#f68e1d, #fc7926); 
+  background: linear-gradient(#f68e1d, #fc7926);color:white;}
+.qx-sbn{background:white;margin-right:40rpx;border:1px solid rgb(216, 214, 214);}
+.qx-sbn:after{border:0;}
+.liteshop-notcont{text-align: center;font-size:30rpx;color: #333;}
+.liteshop-notcont image{width:350rpx;height:350rpx;}

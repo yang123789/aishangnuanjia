@@ -1,0 +1,132 @@
+<!-- <van-steps  active="{{ active }}" active-color="{{wxapp.BackgroundColor}}" custom-class="vsp-c"/>
+
+<view class="p-bottom">
+
+  <view class="card-root-c" wx:for="{{detail.goods}}" wx:key="this" wx:for-index="idx">
+      <van-card custom-class="van-card-root-c" thumb-link="../goods/index?goods_id={{item.goods_id}}" 
+        price="{{item.goods_price}}" num="{{item.total_num}}" title="{{item.goods_name}}"
+        desc="{{item.goods_attr ? item.goods_attr :'默认规格'}}" 
+        centered="{{true}}" lazy-load="{{true}}" title-class="card-t-c" price-class="card-p-c" thumb="{{item.spec.spec_image==''? item.image:item.sku_image}}">
+      </van-card>
+  </view>
+    
+  <van-cell-group custom-class="vcg-c">
+    <van-cell title="订单号：" value="{{detail.order_no}}" />
+    <van-cell title="商品价格总计：" value-class="pric-cell" value="￥{{detail.total_price}}" />
+    <van-cell title="快递费用：" value-class="pric-cell" value="＋ ￥{{detail.express_price}}" />
+
+    
+    <block wx:if="{{detail.freight_time!=0}}">
+      <van-cell title="发货时间：" value="{{detail.freight_time_text}}" />
+      <van-cell title="快递公司：" value="{{detail.express_company}}" />
+      <van-cell title="快递单号：" value="{{detail.express_no}}" />
+    </block>
+  </van-cell-group>
+
+</view>
+
+<van-submit-bar
+  price="{{detail.pay_price*100}}" button-type="{{detail.BTtype}}"
+  button-text="{{detail.BTText}}" disabled="{{active==1 || active==3}}"
+  bind:submit="onClicktjButton"
+  tip="{{ true }}"
+>
+<van-tag size="large" wx:if="{{active==0}}" custom-class="tagadress" color="{{wxapp.BackgroundColor}}" bindtap="TapCancel">取消订单</van-tag>
+  <view slot="tip">
+    <van-icon custom-class='ico-ad' name="logistics"/> {{detail.address.Area.province}}{{detail.address.Area.city}}{{detail.address.Area.region}} - {{detail.address.detail}}<text>\n\r</text>
+    <van-icon custom-class='lianxirentip ico-ad' name="phone"/><text class='lianxirentip'> {{detail.address.name}} : {{detail.address.phone}}</text>
+  </view>
+</van-submit-bar> -->
+<view class="od-detail">
+<!--状态-->
+  <view class="od-state">
+    <text wx:if="{{active==1}}">买家待支付</text>
+    <text wx:if="{{active==2}}">进行中</text>
+    <text wx:if="{{active==3}}">交易完成</text>
+    <image src="/res/imgs/box.png"></image>
+  </view>
+<!--状态-->
+<!--上门地址-->
+  <view class="od-address" wx:if="{{detail.type==2}}">
+    <image src="/res/imgs/dw.png" class="img"></image>
+    <view class="right">
+      <view class="">
+        <view class="p1">
+          <text>{{detail.address.name}}  </text>
+          <text>{{detail.address.phone}}</text>
+        </view>
+        <view class="p2">{{detail.address.Area.province}}{{detail.address.Area.city}}{{detail.address.Area.region}} - {{detail.address.detail}}</view>
+      </view>
+    </view>
+  </view>
+<!--上门地址-->
+<!--到店地址-->
+<view  wx:if="{{detail.type==1}}" class="od-big">
+ <view class="od-address">
+    <image src="/res/imgs/dw.png" class="img"></image>
+    <view class="right">
+      <view class="">
+        <view class="p1">
+          {{detail.station_address}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="qr" wx:if="{{active!==1}}">
+    <image src="{{qrimages}}"></image>
+    <view>温馨提示：老人也可以用老人自己的 专属二维码进行核销哦~</view>
+  </view>
+</view>
+<!--到店地址-->
+<!--商品-->
+  <view class="shop-box">
+    <view class="shop-matter" >
+      <view class="shop-name">
+        <image src="/res/imgs/dp.png"></image>
+        <text>清城养老驿站</text>
+      </view>
+
+      <view class="shop-list">
+        <view class="shop-item" wx:for="{{detail.goods}}">
+          <view class="left">
+            <image src="{{item.image}}"></image>
+          </view>
+          <view class="right">
+            <view class="p1">{{item.goods_name}}</view>
+            <view class="p2">
+              <text wx:if="{{item.goods.type==1}}">到店服务</text>
+              <text wx:else>上门服务</text>
+            </view>
+            <view class="p3">
+              <text class="price">¥{{item.goods_price}}</text>
+              <text class="num">X{{item.total_num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="all-price">
+          共计{{detail.zong_num}}件商品 合计：<text>￥{{detail.pay_price}}</text>
+        </view>
+        <view class="btn-list">
+        <block wx:if="{{active==1}}">
+          <button class="btn-item wbtn" bindtap="TapCancel">取消订单</button>
+          <button class="btn-item ybtn" disabled="{{disabled}}" bindtap="onClicktjButton">立即付款</button>
+        </block>
+        <block wx:if="{{active==2 && detail.type!=1}}">
+          <button class="btn-item ybtn" bindtap="finishButton">确认收货</button>
+        </block>
+        
+        </view>
+      </view>
+
+    </view>
+  </view>
+<!--商品-->
+<!--订单信息-->
+<view class="order-info">
+  <view class="p1">订单信息</view>
+  <view class="p2" wx:if="{{active==2||active==3}}">订单编号：{{detail.order_no}}</view>
+  <view class="p2">支付交易号：{{detail.createtime}}</view>
+  <view class="p2">创建时间：{{detail.creattime_text}}</view>
+</view>
+<!--订单信息-->
+</view>
